@@ -13,7 +13,7 @@ remember(): Stores the experience in the memory.
 replay(): Performs experience replay and trains the neural network.
 The main loop runs for 500 episodes, each lasting 30 days, and the agent learns to act optimally in this environment. The rewards earned in each episode are plotted at the end.
 
-Average reward without OR: 8260.56
+## Average reward without OR: 8260.56
 
 ## DQN with OR (Operations Research) Implementation Code Description
 The DQN with OR extends the basic DQN implementation by incorporating a linear programming objective (lp_objective) into the decision-making process. The agent optimizes both the immediate reward and a long-term objective related to operational metrics.
@@ -23,5 +23,6 @@ The function nested_optimization solves a linear program within the Q-Learning f
 act(): Now uses nested_optimization to determine the action, thus balancing both immediate and long-term objectives.
 Otherwise, the code structure remains similar to the basic DQN, including experience replay and epsilon decay. The key difference lies in the more nuanced action decision process.
 
-Average reward with OR: 8964.86
+## Average reward with OR: 8964.86
+
 Both implementations use TensorFlow for neural network operations and Matplotlib for plotting the total rewards across episodes. The DQN with OR also uses the PuLP library for linear programming.
