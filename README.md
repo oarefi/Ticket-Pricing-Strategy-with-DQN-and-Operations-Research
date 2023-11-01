@@ -1,4 +1,4 @@
-#Ticket Pricing Strategy with DQN and Operations Research
+# Ticket Pricing Strategy with DQN and Operations Research
 
 ## Overview
 
