@@ -1,28 +1,32 @@
-# Ticket Pricing Strategy with DQN and Operations Research
-## Overview
-This repository contains Python code that employs both Deep Q-Network (DQN) and Operations Research (OR) methods to optimize ticket pricing strategies. The code provides an environment for simulating ticket sales, taking into account various parameters like days left for the event, tickets left, and current price.
+#Ticket Pricing Strategy with DQN and Operations Research
 
+## Overview
+
+This repository contains Python code that employs a robust, simulation-based framework using both Deep Q-Network (DQN) and Operations Research (OR) methods to optimize ticket pricing strategies. The code is designed to function in an environment simulating ticket sales for events, taking into account various parameters like days left for the event, tickets left, and the current price. While initially targeted at ticket sales, this system's methodologies can be applied across various domains like finance, e-commerce, and healthcare, thereby demonstrating versatility in tackling complex, multi-dimensional challenges.
 
 ## DQN Implementation Code Description
-The DQN (Deep Q-Network) implementation is for a ticket pricing environment (TicketEnv) where the goal is to maximize the total reward earned from ticket sales over a 30-day period. The environment uses three main state variables: the number of days left (days_left), the number of tickets left (tickets_left), and the current price (price).
+The DQN implementation operates in a ticket pricing environment (TicketEnv) where the objective is to maximize the total revenue earned, denoted as the average reward, from ticket sales over a 30-day period.
 
-The DQNAgent class handles the learning process. It uses a neural network to approximate the Q-values for different actions and states. The model uses two hidden layers, each containing 24 neurons, and uses a mean squared error loss function for training.
+# Key Functionalities:
+act(): Decides which action to take based on the current policy, which could be either exploration or exploitation.
+remember(): Stores experiences in memory for future learning.
+replay(): Executes experience replay to update the neural network weights.
+The model uses a neural network with two hidden layers, each containing 24 neurons, and deploys mean squared error as its loss function for training.
 
-act(): Decides which action to take based on the current policy (either exploring or exploiting).
-remember(): Stores the experience in the memory.
-replay(): Performs experience replay and trains the neural network.
-The main loop runs for 500 episodes, each lasting 30 days, and the agent learns to act optimally in this environment. The rewards earned in each episode are plotted at the end.
+# Average Reward without OR: $8260.56
 
-## Average reward without OR: 8260.56
+# DQN with Operations Research (OR) Implementation Code Description
 
-## DQN with OR (Operations Research) Implementation Code Description
-The DQN with OR extends the basic DQN implementation by incorporating a linear programming objective (lp_objective) into the decision-making process. The agent optimizes both the immediate reward and a long-term objective related to operational metrics.
+This extended version incorporates Operations Research techniques to bring a more nuanced approach to ticket pricing. A linear programming objective (lp_objective) is integrated into the decision-making process, optimizing both immediate and long-term objectives.
 
-The function nested_optimization solves a linear program within the Q-Learning framework to compute the best action at each step. The objective is a weighted sum of the Q-value and the LP objective. This is integrated into the act() method of DQNAgent.
+# Key Functionalities:
+act(): Now employs nested_optimization to make balanced action choices, optimizing for both immediate gains and long-term operational objectives.
+Average Reward with OR: $8964.86
 
-act(): Now uses nested_optimization to determine the action, thus balancing both immediate and long-term objectives.
-Otherwise, the code structure remains similar to the basic DQN, including experience replay and epsilon decay. The key difference lies in the more nuanced action decision process.
+Both implementations are powered by TensorFlow for neural network operations and employ Matplotlib for visualizing the rewards across episodes. The OR version additionally utilizes the PuLP library for linear programming tasks.
 
-## Average reward with OR: 8964.86
-
-Both implementations use TensorFlow for neural network operations and Matplotlib for plotting the total rewards across episodes. The DQN with OR also uses the PuLP library for linear programming.
+# Real-world Applications to Impress Recruiters
+Finance: Algorithmic trading platforms can employ similar techniques to maximize returns while accounting for risks.
+E-commerce: Dynamic pricing strategies can be adapted to e-commerce platforms, balancing inventory levels, competitor pricing, and market demand.
+Healthcare: The nested optimization methodology is particularly beneficial in healthcare for developing personalized treatment plans.
+Energy Sector: The framework can also be adapted for dynamic pricing and demand-side management in the energy sector, optimizing energy consumption and production in real-time.
