@@ -25,6 +25,7 @@ This extended version incorporates Operations Research techniques to bring a mor
 act(): Now employs nested_optimization to make balanced action choices, optimizing for both immediate gains and long-term operational objectives.
 
 ## Average Reward with OR: $8964.86
+![Average Reward with OR](OR.png)
 
 Both implementations are powered by TensorFlow for neural network operations and employ Matplotlib for visualizing the rewards across episodes. The OR version additionally utilizes the PuLP library for linear programming tasks.
 
