@@ -26,7 +26,7 @@ act(): Now employs nested_optimization to make balanced action choices, optimizi
 
 Both implementations are powered by TensorFlow for neural network operations and employ Matplotlib for visualizing the rewards across episodes. The OR version additionally utilizes the PuLP library for linear programming tasks.
 
-# Real-world Applications to Impress Recruiters
+# Real-world Applications
 Finance: Algorithmic trading platforms can employ similar techniques to maximize returns while accounting for risks.
 E-commerce: Dynamic pricing strategies can be adapted to e-commerce platforms, balancing inventory levels, competitor pricing, and market demand.
 Healthcare: The nested optimization methodology is particularly beneficial in healthcare for developing personalized treatment plans.
