@@ -14,7 +14,7 @@ replay(): Executes experience replay to update the neural network weights.
 The model uses a neural network with two hidden layers, each containing 24 neurons, and deploys mean squared error as its loss function for training.
 
 ## Average Reward without OR: $8260.56
-![OR.png]
+![Average Reward without OR](~OR.png)
 
 
 ## DQN with Operations Research (OR) Implementation Code Description
