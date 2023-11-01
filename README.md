@@ -7,19 +7,19 @@ This repository contains Python code that employs a robust, simulation-based fra
 ## DQN Implementation Code Description
 The DQN implementation operates in a ticket pricing environment (TicketEnv) where the objective is to maximize the total revenue earned, denoted as the average reward, from ticket sales over a 30-day period.
 
-# Key Functionalities:
+## Key Functionalities:
 act(): Decides which action to take based on the current policy, which could be either exploration or exploitation.
 remember(): Stores experiences in memory for future learning.
 replay(): Executes experience replay to update the neural network weights.
 The model uses a neural network with two hidden layers, each containing 24 neurons, and deploys mean squared error as its loss function for training.
 
-# Average Reward without OR: $8260.56
+## Average Reward without OR: $8260.56
 
-# DQN with Operations Research (OR) Implementation Code Description
+## DQN with Operations Research (OR) Implementation Code Description
 
 This extended version incorporates Operations Research techniques to bring a more nuanced approach to ticket pricing. A linear programming objective (lp_objective) is integrated into the decision-making process, optimizing both immediate and long-term objectives.
 
-# Key Functionalities:
+## Key Functionalities:
 act(): Now employs nested_optimization to make balanced action choices, optimizing for both immediate gains and long-term operational objectives.
 Average Reward with OR: $8964.86
 
